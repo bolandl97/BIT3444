@@ -4,9 +4,18 @@ Public Class Database
     Private Property myDataSet As New DataSet
     Private nodesDA As OleDbDataAdapter
     Private arcsDA As OleDbDataAdapter
+    Private productsDA As OleDbDataAdapter
+    Private supplyDemandDA As OleDbDataAdapter
 
     Public Sub New()
-
+        nodesDA = GetDataAdapter("SELECT * FROM Nodes")
+        nodesDA.Fill(myDataSet, "Nodes")
+        arcsDA = GetDataAdapter("SELECT * FROM Arcs")
+        arcsDA.Fill(myDataSet, "Arcs")
+        productsDA = GetDataAdapter("SELECT * FROM Products")
+        productsDA.Fill(myDataSet, "Products")
+        supplyDemandDA = GetDataAdapter("SELECT * FROM DemandSupply")
+        supplyDemandDA.Fill(myDataSet, "DemandSupply")
     End Sub
 
     Public Function GetDataAdapter(mySQL As String) As OleDbDataAdapter
