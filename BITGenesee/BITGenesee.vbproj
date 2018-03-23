@@ -99,6 +99,7 @@
     <Compile Include="Network.vb" />
     <Compile Include="Node.vb" />
     <Compile Include="Product.vb" />
+<Compile Include="TArc.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="frmVisual.resx">
