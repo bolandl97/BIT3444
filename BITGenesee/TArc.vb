@@ -2,7 +2,7 @@
     ' Implements TArc class which inherits Arc class, and adds a list of trans-paths
     ' Dependencies: Arc
     Public Class TArc
-
+        .
         Inherits Arc
 
         Public Property PathList As New List(Of String())
