@@ -99,7 +99,7 @@
     <Compile Include="Network.vb" />
     <Compile Include="Node.vb" />
     <Compile Include="Product.vb" />
-<Compile Include="TArc.vb" />
+    <Compile Include="TArc.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="frmVisual.resx">
@@ -123,6 +123,11 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Database.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

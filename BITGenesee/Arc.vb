@@ -17,6 +17,7 @@
             End If
             Tail = t
             Head = h
+            Cost = d
             ID = Tail.ID & "-TO-" & Head.ID
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Arc error")

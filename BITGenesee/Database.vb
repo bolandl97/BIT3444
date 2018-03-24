@@ -7,39 +7,37 @@ Public Class Database
     Private productsDA As OleDbDataAdapter
     Private supplyDemandDA As OleDbDataAdapter
 
+    Public Function GetDataAdapter(mySQL As String) As OleDbDataAdapter
+        Dim connStr As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" &
+            Application.StartupPath & "\Database.accdb"
+        Return New OleDbDataAdapter(mySQL, connStr)
+
+    End Function
+
     Public Sub New()
-        nodesDA = GetDataAdapter("SELECT * FROM Nodes")
+        nodesDA = GetDataAdapter("SELECT Code, City FROM Nodes")
         nodesDA.Fill(myDataSet, "Nodes")
         arcsDA = GetDataAdapter("SELECT * FROM Arcs")
         arcsDA.Fill(myDataSet, "Arcs")
         productsDA = GetDataAdapter("SELECT * FROM Products")
         productsDA.Fill(myDataSet, "Products")
-        supplyDemandDA = GetDataAdapter("SELECT * FROM DemandSupply")
+        supplyDemandDA = GetDataAdapter("SELECT Code, Prod1Dem, Prod2Dem, Prod3Dem FROM Nodes")
         supplyDemandDA.Fill(myDataSet, "DemandSupply")
     End Sub
 
-    Public Function GetDataAdapter(mySQL As String) As OleDbDataAdapter
-        Dim connStr As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" &
-            Application.StartupPath & "\Network.accdb"
-        Return New OleDbDataAdapter(mySQL, connStr)
-
-    End Function
-
     Public Function GetNodes() As SortedList(Of String, Node)
-        nodesDA = GetDataAdapter("SELECT DISTINCT Tail FROM Arcs")
-        nodesDA.Fill(myDataSet, "Nodes")
         Dim nodesList As New SortedList(Of String, Node)
         For i = 0 To myDataSet.Tables(“Nodes”).Rows.Count - 1
-            Dim nodeName As String = myDataSet.Tables("Nodes").Rows(i)("Tail")
-            Dim node As New Node(nodeName)
-            nodesList.Add(nodeName, node)
+            Dim nodeID As String = myDataSet.Tables("Nodes").Rows(i)("Code")
+            Dim nodeName As String = myDataSet.Tables("Nodes").Rows(i)("City")
+            Dim node As New Node(nodeID)
+            node.CityName = nodeName
+            nodesList.Add(nodeID, node)
         Next
         Return nodesList
     End Function
 
     Public Function GetArcs(nodeList As SortedList(Of String, Node)) As SortedList(Of String, Arc)
-        arcsDA = GetDataAdapter("SELECT * FROM Arcs")
-        arcsDA.Fill(myDataSet, "Arcs")
         Dim arcsList As New SortedList(Of String, Arc)
         For i = 0 To myDataSet.Tables(“Arcs”).Rows.Count - 1
             Dim tail As String = myDataSet.Tables("Arcs").Rows(i)("Tail")
@@ -52,4 +50,5 @@ Public Class Database
         Next
         Return arcsList
     End Function
+
 End Class
