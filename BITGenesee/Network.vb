@@ -1,40 +1,32 @@
-﻿Public Class Network
+﻿'This is the network class, used in the solver model
+
+Public Class Network
     Public Property NodeList As New SortedList(Of String, Node)
     Public Property ArcList As New SortedList(Of String, Arc)
-    Public Property ProdList As SortedList(Of String, Integer)
+    Public Property ProdList As New SortedList(Of String, Product)
+
+    Public Event Changed(net As Network)
 
     Public Sub New()
 
     End Sub
 
-    'Return node instance given id
-    Public Function GetNode(id As String) As Node
-        Try
-            If Not NodeList.ContainsKey(id) Then
-                Throw New Exception("Node " & id & " does not exist.")
-            End If
-            Return NodeList(id)
-        Catch ex As Exception
-            MessageBox.Show(ex.Message, "Node error")
-            Return Nothing
-        End Try
-    End Function
+    Public Sub AddNodes(nodesList As SortedList(Of String, Node))
+        For Each n In nodesList
+            NodeList.Add(n.Key, n.Value)
+        Next
+    End Sub
 
-    ' Return arc instance given tail and head node
-    Public Function GetArc(t As String, h As String) As Arc
-        Try
-            Dim id As String = t & "-TO-" & h
-            If Not ArcList.ContainsKey(id) Then
-                Throw New Exception("Arc" & id & " does not exist.")
-            End If
-            Return ArcList(id)
-        Catch ex As Exception
-            MessageBox.Show(ex.Message, "Arc error")
-            Return Nothing
-        End Try
-    End Function
+    Public Sub AddArcs(arcsList As SortedList(Of String, Arc))
+        For Each a In arcsList
+            ArcList.Add(a.Key, a.Value)
+        Next
+    End Sub
 
-
-
+    Public Sub AddProducts(prodsList As SortedList(Of String, Product))
+        For Each p In prodsList
+            ProdList.Add(p.Key, p.Value)
+        Next
+    End Sub
 
 End Class
