@@ -6,8 +6,8 @@
     Public Property Cost As Decimal
     'these next two properties are supposed to be part of a TArc class in all the examples,
     'but it works fine this way so I'll ask Seref in class on Tuesday what he wants to see
-    Public Property PathList As New List(Of String())
-    Public Property MultiFlow As New SortedList(Of String, Decimal)
+    'Public Property PathList As New List(Of String())
+    'Public Property MultiFlow As New SortedList(Of String, Decimal)
 
     ' Default Constructor
     Public Sub New()

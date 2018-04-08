@@ -2,7 +2,7 @@
 
 Public Class Network
     Public Property NodeList As New SortedList(Of String, Node)
-    Public Property ArcList As New SortedList(Of String, Arc)
+    Public Property ArcList As New SortedList(Of String, TArc)
     Public Property ProdList As New SortedList(Of String, Product)
 
     Public Event Changed(net As Network)
@@ -18,8 +18,14 @@ Public Class Network
     End Sub
 
     Public Sub AddArcs(arcsList As SortedList(Of String, Arc))
-        For Each a In arcsList
-            ArcList.Add(a.Key, a.Value)
+        For Each a In arcsList.Values
+            Dim t As New TArc
+            t.Head = a.Head
+            t.Tail = a.Tail
+            t.Capacity = a.Capacity
+            t.Cost = a.Cost
+            t.ID = a.ID
+            ArcList.Add(t.ID, t)
         Next
     End Sub
 

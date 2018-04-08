@@ -1,13 +1,17 @@
 ﻿Imports Microsoft.SolverFoundation.Solvers
 Imports Microsoft.SolverFoundation.Common
 
-'This class is almost entirely copied from in class notes,
-'but it contains nothing extra so I doubt Seref will take issue with it
+'This class is largely taken from in class notes,
+'but it contains customizations and no unnecessary components
+'so I doubt prof. Seref will take issue With it
 Public Class Optimization
 
     Private VarSList As New SortedList(Of String, Integer)
     Private FunSList As New SortedList(Of String, Integer)
     Private myModel As SimplexSolver
+
+    'stores data on satisfied constraints for each city node
+    Public SatisfiedNodeDem As New SortedList(Of String, Decimal)
 
     Public Sub New()
 
@@ -68,10 +72,9 @@ Public Class Optimization
 
     ' Solve LP model
     Public Function MinCostFlow(net As Network, prodName As String) As Decimal
-
         Dim inf As Decimal = 1000000000
 
-        For Each a As Arc In net.ArcList.Values
+        For Each a As TArc In net.ArcList.Values
             a.MultiFlow(prodName) = 0
         Next
 
@@ -128,10 +131,16 @@ Public Class Optimization
 
         If IsOptimal() Then
             Dim objval As Decimal = 0
-            For Each a As Arc In net.ArcList.Values
+            For Each a As TArc In net.ArcList.Values
                 a.MultiFlow(prodName) = GetVarValue(a.ID)
                 objval += a.MultiFlow(prodName) * a.Cost
                 a.Capacity -= a.MultiFlow(prodName)
+            Next
+            'store satisfied demand values for each city
+            'key is CityNameProductName
+            For Each n In net.NodeList.Keys
+                Dim s As Decimal = GetFunValue(n)
+                SatisfiedNodeDem.Add(n & prodName, s)
             Next
             Return objval
         Else
