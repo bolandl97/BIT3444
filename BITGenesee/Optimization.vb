@@ -1,5 +1,4 @@
 ﻿Imports Microsoft.SolverFoundation.Solvers
-Imports Microsoft.SolverFoundation.Common
 
 'This class is largely taken from in class notes,
 'but it contains customizations and no unnecessary components
@@ -93,7 +92,7 @@ Public Class Optimization
             End If
         Next
 
-        ' flow balance constratins
+        ' flow balance constraints
         For Each n In net.NodeList.Values
             If n.Demand(prodName) = 0 Then
                 AddFun(n.ID, 0, 0)
