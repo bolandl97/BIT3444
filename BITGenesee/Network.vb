@@ -12,14 +12,12 @@ Public Class Network
     End Sub
 
     Public Sub AddNodes(nodesList As SortedList(Of String, Node))
-        NodeList.Clear()
         For Each n In nodesList
             NodeList.Add(n.Key, n.Value)
         Next
     End Sub
 
     Public Sub AddArcs(arcsList As SortedList(Of String, Arc))
-        ArcList.Clear()
         For Each a In arcsList.Values
             Dim t As New TArc
             t.Head = a.Head
@@ -32,7 +30,6 @@ Public Class Network
     End Sub
 
     Public Sub AddProducts(prodsList As SortedList(Of String, Product))
-        ProdList.Clear()
         For Each p In prodsList
             ProdList.Add(p.Key, p.Value)
         Next
