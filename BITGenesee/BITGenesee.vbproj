@@ -78,21 +78,10 @@
   <ItemGroup>
     <Compile Include="Arc.vb" />
     <Compile Include="Database.vb" />
-    <Compile Include="DatabaseDataSet.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DatabaseDataSet.xsd</DependentUpon>
+    <Compile Include="frmProgress.Designer.vb">
+      <DependentUpon>frmProgress.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmProducts.Designer.vb">
-      <DependentUpon>frmProducts.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmProducts.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmNodes.Designer.vb">
-      <DependentUpon>frmNodes.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmNodes.vb">
+    <Compile Include="frmProgress.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmVisual.vb">
@@ -100,20 +89,6 @@
     </Compile>
     <Compile Include="frmVisual.Designer.vb">
       <DependentUpon>frmVisual.vb</DependentUpon>
-      <SubType>Form</SubType>
-    </Compile>
-	<Compile Include="frmArc.vb">
-      <SubType>Form</SubType>
-    </Compile>
-	<Compile Include="frmArc.Designer.vb">
-      <DependentUpon>frmArc.vb</DependentUpon>
-      <SubType>Form</SubType>
-    </Compile>
-	<Compile Include="frmlogin.vb">
-      <SubType>Form</SubType>
-    </Compile>
-	<Compile Include="frmlogin.Designer.vb">
-      <DependentUpon>frmlogin.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -138,20 +113,11 @@
     <Compile Include="TArc.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="frmProducts.resx">
-      <DependentUpon>frmProducts.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmNodes.resx">
-      <DependentUpon>frmNodes.vb</DependentUpon>
+    <EmbeddedResource Include="frmProgress.resx">
+      <DependentUpon>frmProgress.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVisual.resx">
       <DependentUpon>frmVisual.vb</DependentUpon>
-	</EmbeddedResource>
-	<EmbeddedResource Include="frmArc.resx">
-      <DependentUpon>frmArc.vb</DependentUpon>
-    </EmbeddedResource>
-	<EmbeddedResource Include="frmlogin.resx">
-      <DependentUpon>frmlogin.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -161,17 +127,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="DatabaseDataSet.xsc">
-      <DependentUpon>DatabaseDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="DatabaseDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DatabaseDataSet.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DatabaseDataSet.xss">
-      <DependentUpon>DatabaseDataSet.xsd</DependentUpon>
-    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

@@ -38,6 +38,7 @@ Partial Class frmVisual
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtSatisfiedDemand = New System.Windows.Forms.TextBox()
+        Me.cbxSelected = New System.Windows.Forms.CheckBox()
         Me.SuspendLayout()
         '
         'lstNodes
@@ -168,11 +169,22 @@ Partial Class frmVisual
         Me.txtSatisfiedDemand.Size = New System.Drawing.Size(100, 20)
         Me.txtSatisfiedDemand.TabIndex = 15
         '
+        'cbxSelected
+        '
+        Me.cbxSelected.AutoSize = True
+        Me.cbxSelected.Location = New System.Drawing.Point(215, 398)
+        Me.cbxSelected.Name = "cbxSelected"
+        Me.cbxSelected.Size = New System.Drawing.Size(162, 17)
+        Me.cbxSelected.TabIndex = 16
+        Me.cbxSelected.Text = "Solve Only Selected Product"
+        Me.cbxSelected.UseVisualStyleBackColor = True
+        '
         'frmVisual
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(425, 502)
+        Me.Controls.Add(Me.cbxSelected)
         Me.Controls.Add(Me.txtSatisfiedDemand)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
@@ -213,4 +225,5 @@ Partial Class frmVisual
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents txtSatisfiedDemand As TextBox
+    Friend WithEvents cbxSelected As CheckBox
 End Class

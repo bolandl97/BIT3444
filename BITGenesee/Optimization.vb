@@ -1,4 +1,5 @@
 ﻿Imports Microsoft.SolverFoundation.Solvers
+Imports Microsoft.SolverFoundation.Common
 
 'This class is largely taken from in class notes,
 'but it contains customizations and no unnecessary components
@@ -92,7 +93,7 @@ Public Class Optimization
             End If
         Next
 
-        ' flow balance constraints
+        ' flow balance constratins
         For Each n In net.NodeList.Values
             If n.Demand(prodName) = 0 Then
                 AddFun(n.ID, 0, 0)
@@ -139,6 +140,9 @@ Public Class Optimization
             'key is CityNameProductName
             For Each n In net.NodeList.Keys
                 Dim s As Decimal = GetFunValue(n)
+                If net.NodeList(n).Demand(prodName) < 0 Then
+                    s += GetVarValue(n & "_slack")
+                End If
                 SatisfiedNodeDem.Add(n & prodName, s)
             Next
             Return objval

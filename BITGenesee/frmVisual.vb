@@ -81,7 +81,11 @@
                 txtDemand.Text = data.GetDemand(net.NodeList(lstNodes.SelectedItem),
                                                 net.ProdList(lstProducts.SelectedItem))
                 'sets satisfied demand text box to node satisfied demand for selected product
-                txtSatisfiedDemand.Text = opt.SatisfiedNodeDem(lstNodes.SelectedItem & lstProducts.SelectedItem)
+                Dim s As String = lstNodes.SelectedItem & lstProducts.SelectedItem
+                If opt.SatisfiedNodeDem.ContainsKey(s) Then
+                    txtSatisfiedDemand.Text = opt.SatisfiedNodeDem(s)
+                Else txtSatisfiedDemand.Text = 0
+                End If
             Else
                 txtDemand.Text = data.GetDemand(nodesList(lstNodes.SelectedItem),
                                                 prodsList(lstProducts.SelectedItem))
@@ -98,9 +102,14 @@
             txtDemand.Text = data.GetDemand(net.NodeList(lstNodes.SelectedItem),
                                         net.ProdList(lstProducts.SelectedItem))
             'sets satisfied demand text box to node satisfied demand for selected product
-            txtSatisfiedDemand.Text = opt.SatisfiedNodeDem(lstNodes.SelectedItem & lstProducts.SelectedItem)
+            Dim s As String = lstNodes.SelectedItem & lstProducts.SelectedItem
+            If opt.SatisfiedNodeDem.ContainsKey(s) Then
+                txtSatisfiedDemand.Text = opt.SatisfiedNodeDem(s)
+            Else
+                txtSatisfiedDemand.Text = 0
+            End If
         Else
-            txtDemand.Text = data.GetDemand(nodesList(lstNodes.SelectedItem),
+                txtDemand.Text = data.GetDemand(nodesList(lstNodes.SelectedItem),
                                              prodsList(lstProducts.SelectedItem))
         End If
 
@@ -110,9 +119,13 @@
     'builds network for solver model
     Public Sub BuildNetwork()
         opt = New Optimization
-        net.AddNodes(data.GetNodes)
-        net.AddArcs(data.GetArcs(net.NodeList))
-        net.AddProducts(data.GetProducts)
+        net.NodeList.Clear()
+        net.ArcList.Clear()
+        net.ProdList.Clear()
+        'net.AddNodes(data.GetNodes)
+        'net.AddArcs(data.GetArcs(net.NodeList))
+        'net.AddProducts(data.GetProducts)
+        net.BuildNetwork(nodesList, arcsList, prodsList)
     End Sub
 
     'solves LP model
@@ -120,10 +133,38 @@
         solved = False
         BuildNetwork()
 
+        'Dim cityList = From city In net.NodeList.Values
+        '               Order By city.ArcsOut.Count Descending, city.ID
+        'Dim progForm As New frmProgress
+        'progForm.prbNodes.Minimum = 1
+        'progForm.prbNodes.Maximum = cityList.Count
+        'progForm.Show()
+
+        'Dim cnt As Integer = 0
+        'Dim cnt1 As Integer = 0
+        'For Each city In cityList
+
+
+        '    cnt += 1
+        '    progForm.prbNodes.Value = cnt
+        '    progForm.Refresh()
+        'Next
+        'cnt1 += 1
+        'If cnt1 > 0 Then
+        '    progForm.Close()
+        'End If
+
+
         Dim totalCost As Decimal = 0
-        For Each p In net.ProdList
-            totalCost += opt.MinCostFlow(net, p.Key)
-        Next
+        If cbxSelected.Checked Then
+            totalCost = opt.MinCostFlow(net, lstProducts.SelectedItem)
+        Else
+            For Each p In net.ProdList
+                totalCost += opt.MinCostFlow(net, p.Key)
+            Next
+        End If
+
+
         If totalCost > 0 Then
             solved = True
         End If
