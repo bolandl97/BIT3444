@@ -39,5 +39,16 @@ C:\BIT3444\Project\PR3\BITGenesee\obj\Debug\BITGenesee.vbproj.CoreCompileInputs.
 C:\BIT3444\Project\PR3\BITGenesee\obj\Debug\BITGenesee.exe
 C:\BIT3444\Project\PR3\BITGenesee\obj\Debug\BITGenesee.xml
 C:\BIT3444\Project\PR3\BITGenesee\obj\Debug\BITGenesee.pdb
-C:\BIT3444\Project\PR3\BITGenesee\obj\Debug\BITGenesee.frmProducts.resources
-C:\BIT3444\Project\PR3\BITGenesee\obj\Debug\BITGenesee.frmNodes.resources
+C:\Users\Liam\Downloads\BIT3444-master (1)\BIT3444-master\BITGenesee\bin\Debug\Database.accdb
+C:\Users\Liam\Downloads\BIT3444-master (1)\BIT3444-master\BITGenesee\bin\Debug\BITGenesee.exe.config
+C:\Users\Liam\Downloads\BIT3444-master (1)\BIT3444-master\BITGenesee\bin\Debug\BITGenesee.exe
+C:\Users\Liam\Downloads\BIT3444-master (1)\BIT3444-master\BITGenesee\bin\Debug\BITGenesee.pdb
+C:\Users\Liam\Downloads\BIT3444-master (1)\BIT3444-master\BITGenesee\bin\Debug\BITGenesee.xml
+C:\Users\Liam\Downloads\BIT3444-master (1)\BIT3444-master\BITGenesee\obj\Debug\BITGenesee.vbprojResolveAssemblyReference.cache
+C:\Users\Liam\Downloads\BIT3444-master (1)\BIT3444-master\BITGenesee\obj\Debug\BITGenesee.frmVisual.resources
+C:\Users\Liam\Downloads\BIT3444-master (1)\BIT3444-master\BITGenesee\obj\Debug\BITGenesee.Resources.resources
+C:\Users\Liam\Downloads\BIT3444-master (1)\BIT3444-master\BITGenesee\obj\Debug\BITGenesee.vbproj.GenerateResource.Cache
+C:\Users\Liam\Downloads\BIT3444-master (1)\BIT3444-master\BITGenesee\obj\Debug\BITGenesee.vbproj.CoreCompileInputs.cache
+C:\Users\Liam\Downloads\BIT3444-master (1)\BIT3444-master\BITGenesee\obj\Debug\BITGenesee.exe
+C:\Users\Liam\Downloads\BIT3444-master (1)\BIT3444-master\BITGenesee\obj\Debug\BITGenesee.xml
+C:\Users\Liam\Downloads\BIT3444-master (1)\BIT3444-master\BITGenesee\obj\Debug\BITGenesee.pdb

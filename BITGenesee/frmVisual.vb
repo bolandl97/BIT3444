@@ -81,11 +81,7 @@
                 txtDemand.Text = data.GetDemand(net.NodeList(lstNodes.SelectedItem),
                                                 net.ProdList(lstProducts.SelectedItem))
                 'sets satisfied demand text box to node satisfied demand for selected product
-                Dim s As String = lstNodes.SelectedItem & lstProducts.SelectedItem
-                If opt.SatisfiedNodeDem.ContainsKey(s) Then
-                    txtSatisfiedDemand.Text = opt.SatisfiedNodeDem(s)
-                Else txtSatisfiedDemand.Text = 0
-                End If
+                txtSatisfiedDemand.Text = opt.SatisfiedNodeDem(lstNodes.SelectedItem & lstProducts.SelectedItem)
             Else
                 txtDemand.Text = data.GetDemand(nodesList(lstNodes.SelectedItem),
                                                 prodsList(lstProducts.SelectedItem))
@@ -102,14 +98,9 @@
             txtDemand.Text = data.GetDemand(net.NodeList(lstNodes.SelectedItem),
                                         net.ProdList(lstProducts.SelectedItem))
             'sets satisfied demand text box to node satisfied demand for selected product
-            Dim s As String = lstNodes.SelectedItem & lstProducts.SelectedItem
-            If opt.SatisfiedNodeDem.ContainsKey(s) Then
-                txtSatisfiedDemand.Text = opt.SatisfiedNodeDem(s)
-            Else
-                txtSatisfiedDemand.Text = 0
-            End If
+            txtSatisfiedDemand.Text = opt.SatisfiedNodeDem(lstNodes.SelectedItem & lstProducts.SelectedItem)
         Else
-                txtDemand.Text = data.GetDemand(nodesList(lstNodes.SelectedItem),
+            txtDemand.Text = data.GetDemand(nodesList(lstNodes.SelectedItem),
                                              prodsList(lstProducts.SelectedItem))
         End If
 
@@ -119,9 +110,6 @@
     'builds network for solver model
     Public Sub BuildNetwork()
         opt = New Optimization
-        net.NodeList.Clear()
-        net.ArcList.Clear()
-        net.ProdList.Clear()
         net.AddNodes(data.GetNodes)
         net.AddArcs(data.GetArcs(net.NodeList))
         net.AddProducts(data.GetProducts)
@@ -133,16 +121,9 @@
         BuildNetwork()
 
         Dim totalCost As Decimal = 0
-        If cbxSelected.Checked Then
-            totalCost = opt.MinCostFlow(net, lstProducts.SelectedItem)
-        Else
-            'For Each p In net.ProdList
-            '    totalCost += opt.MinCostFlow(net, p.Key)
-            'Next
-            totalCost = opt.MinCostFlow2(net)
-        End If
-
-
+        For Each p In net.ProdList
+            totalCost += opt.MinCostFlow(net, p.Key)
+        Next
         If totalCost > 0 Then
             solved = True
         End If
