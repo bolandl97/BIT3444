@@ -1,0 +1,196 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+BITGenesee
+</name>
+</assembly>
+<members>
+<member name="T:BITGenesee.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:BITGenesee.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:BITGenesee.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:BITGenesee.DatabaseDataSet">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:BITGenesee.DatabaseDataSet.ArcsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:BITGenesee.DatabaseDataSet.NodesDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:BITGenesee.DatabaseDataSet.ProductsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:BITGenesee.DatabaseDataSet.ArcsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:BITGenesee.DatabaseDataSet.NodesRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:BITGenesee.DatabaseDataSet.ProductsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:BITGenesee.DatabaseDataSet.ArcsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:BITGenesee.DatabaseDataSet.NodesRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:BITGenesee.DatabaseDataSet.ProductsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:BITGenesee.DatabaseDataSetTableAdapters.ArcsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:BITGenesee.DatabaseDataSetTableAdapters.NodesTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:BITGenesee.DatabaseDataSetTableAdapters.ProductsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:BITGenesee.DatabaseDataSetTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:BITGenesee.DatabaseDataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(BITGenesee.DatabaseDataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:BITGenesee.DatabaseDataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(BITGenesee.DatabaseDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:BITGenesee.DatabaseDataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(BITGenesee.DatabaseDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:BITGenesee.DatabaseDataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:BITGenesee.DatabaseDataSetTableAdapters.TableAdapterManager.UpdateAll(BITGenesee.DatabaseDataSet)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:BITGenesee.DatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:BITGenesee.DatabaseDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:BITGenesee.UsersDataSet">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:BITGenesee.UsersDataSet.UsersDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:BITGenesee.UsersDataSet.UsersRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:BITGenesee.UsersDataSet.UsersRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:BITGenesee.UsersDataSetTableAdapters.UsersTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:BITGenesee.UsersDataSetTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:BITGenesee.UsersDataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(BITGenesee.UsersDataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:BITGenesee.UsersDataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(BITGenesee.UsersDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:BITGenesee.UsersDataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(BITGenesee.UsersDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:BITGenesee.UsersDataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:BITGenesee.UsersDataSetTableAdapters.TableAdapterManager.UpdateAll(BITGenesee.UsersDataSet)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:BITGenesee.UsersDataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:BITGenesee.UsersDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+</members>
+</doc>
