@@ -78,6 +78,23 @@
   <ItemGroup>
     <Compile Include="Arc.vb" />
     <Compile Include="Database.vb" />
+    <Compile Include="DatabaseDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmProducts.Designer.vb">
+      <DependentUpon>frmProducts.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmProducts.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNodes.Designer.vb">
+      <DependentUpon>frmNodes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmNodes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmVisual.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +124,12 @@
     <Compile Include="TArc.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmProducts.resx">
+      <DependentUpon>frmProducts.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNodes.resx">
+      <DependentUpon>frmNodes.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmVisual.resx">
       <DependentUpon>frmVisual.vb</DependentUpon>
     </EmbeddedResource>
@@ -118,6 +141,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="DatabaseDataSet.xsc">
+      <DependentUpon>DatabaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DatabaseDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatabaseDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DatabaseDataSet.xss">
+      <DependentUpon>DatabaseDataSet.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

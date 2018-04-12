@@ -39,3 +39,5 @@ C:\BIT3444\Project\PR3\BITGenesee\obj\Debug\BITGenesee.vbproj.CoreCompileInputs.
 C:\BIT3444\Project\PR3\BITGenesee\obj\Debug\BITGenesee.exe
 C:\BIT3444\Project\PR3\BITGenesee\obj\Debug\BITGenesee.xml
 C:\BIT3444\Project\PR3\BITGenesee\obj\Debug\BITGenesee.pdb
+C:\BIT3444\Project\PR3\BITGenesee\obj\Debug\BITGenesee.frmProducts.resources
+C:\BIT3444\Project\PR3\BITGenesee\obj\Debug\BITGenesee.frmNodes.resources
