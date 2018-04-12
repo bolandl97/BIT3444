@@ -23,12 +23,12 @@ Partial Class frmNodes
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmNodes))
         Dim CityLabel As System.Windows.Forms.Label
         Dim CodeLabel As System.Windows.Forms.Label
         Dim Prod1DemLabel As System.Windows.Forms.Label
         Dim Prod2DemLabel As System.Windows.Forms.Label
         Dim Prod3DemLabel As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmNodes))
         Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
@@ -64,6 +64,57 @@ Partial Class frmNodes
         CType(Me.NodesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
+        'CityLabel
+        '
+        CityLabel.AutoSize = True
+        CityLabel.Location = New System.Drawing.Point(158, 129)
+        CityLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        CityLabel.Name = "CityLabel"
+        CityLabel.Size = New System.Drawing.Size(39, 20)
+        CityLabel.TabIndex = 1
+        CityLabel.Text = "City:"
+        '
+        'CodeLabel
+        '
+        CodeLabel.AutoSize = True
+        CodeLabel.Location = New System.Drawing.Point(158, 158)
+        CodeLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        CodeLabel.Name = "CodeLabel"
+        CodeLabel.Size = New System.Drawing.Size(51, 20)
+        CodeLabel.TabIndex = 3
+        CodeLabel.Text = "Code:"
+        '
+        'Prod1DemLabel
+        '
+        Prod1DemLabel.AutoSize = True
+        Prod1DemLabel.Location = New System.Drawing.Point(158, 188)
+        Prod1DemLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Prod1DemLabel.Name = "Prod1DemLabel"
+        Prod1DemLabel.Size = New System.Drawing.Size(89, 20)
+        Prod1DemLabel.TabIndex = 5
+        Prod1DemLabel.Text = "Prod1Dem:"
+        AddHandler Prod1DemLabel.Click, AddressOf Me.Prod1DemLabel_Click
+        '
+        'Prod2DemLabel
+        '
+        Prod2DemLabel.AutoSize = True
+        Prod2DemLabel.Location = New System.Drawing.Point(158, 218)
+        Prod2DemLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Prod2DemLabel.Name = "Prod2DemLabel"
+        Prod2DemLabel.Size = New System.Drawing.Size(89, 20)
+        Prod2DemLabel.TabIndex = 7
+        Prod2DemLabel.Text = "Prod2Dem:"
+        '
+        'Prod3DemLabel
+        '
+        Prod3DemLabel.AutoSize = True
+        Prod3DemLabel.Location = New System.Drawing.Point(158, 247)
+        Prod3DemLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Prod3DemLabel.Name = "Prod3DemLabel"
+        Prod3DemLabel.Size = New System.Drawing.Size(89, 20)
+        Prod3DemLabel.TabIndex = 9
+        Prod3DemLabel.Text = "Prod3Dem:"
+        '
         'BindingNavigatorMoveFirstItem
         '
         Me.BindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
@@ -92,14 +143,14 @@ Partial Class frmNodes
         Me.BindingNavigatorPositionItem.AccessibleName = "Position"
         Me.BindingNavigatorPositionItem.AutoSize = False
         Me.BindingNavigatorPositionItem.Name = "BindingNavigatorPositionItem"
-        Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(50, 39)
+        Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(38, 31)
         Me.BindingNavigatorPositionItem.Text = "0"
         Me.BindingNavigatorPositionItem.ToolTipText = "Current position"
         '
         'BindingNavigatorCountItem
         '
         Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(71, 36)
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(54, 36)
         Me.BindingNavigatorCountItem.Text = "of {0}"
         Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
         '
@@ -163,7 +214,7 @@ Partial Class frmNodes
         Me.BindingNavigator1.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.BindingNavigator1.Name = "BindingNavigator1"
         Me.BindingNavigator1.PositionItem = Me.BindingNavigatorPositionItem
-        Me.BindingNavigator1.Size = New System.Drawing.Size(633, 39)
+        Me.BindingNavigator1.Size = New System.Drawing.Size(475, 39)
         Me.BindingNavigator1.TabIndex = 0
         Me.BindingNavigator1.Text = "BindingNavigator1"
         '
@@ -189,96 +240,56 @@ Partial Class frmNodes
         Me.TableAdapterManager.ProductsTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = BITGenesee.DatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
-        'CityLabel
-        '
-        CityLabel.AutoSize = True
-        CityLabel.Location = New System.Drawing.Point(210, 161)
-        CityLabel.Name = "CityLabel"
-        CityLabel.Size = New System.Drawing.Size(55, 25)
-        CityLabel.TabIndex = 1
-        CityLabel.Text = "City:"
-        '
         'CityTextBox
         '
         Me.CityTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.NodesBindingSource, "City", True))
-        Me.CityTextBox.Location = New System.Drawing.Point(335, 158)
+        Me.CityTextBox.Location = New System.Drawing.Point(251, 126)
+        Me.CityTextBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.CityTextBox.Name = "CityTextBox"
-        Me.CityTextBox.Size = New System.Drawing.Size(100, 31)
+        Me.CityTextBox.Size = New System.Drawing.Size(76, 26)
         Me.CityTextBox.TabIndex = 2
-        '
-        'CodeLabel
-        '
-        CodeLabel.AutoSize = True
-        CodeLabel.Location = New System.Drawing.Point(210, 198)
-        CodeLabel.Name = "CodeLabel"
-        CodeLabel.Size = New System.Drawing.Size(69, 25)
-        CodeLabel.TabIndex = 3
-        CodeLabel.Text = "Code:"
         '
         'CodeTextBox
         '
         Me.CodeTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.NodesBindingSource, "Code", True))
-        Me.CodeTextBox.Location = New System.Drawing.Point(335, 195)
+        Me.CodeTextBox.Location = New System.Drawing.Point(251, 156)
+        Me.CodeTextBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.CodeTextBox.Name = "CodeTextBox"
-        Me.CodeTextBox.Size = New System.Drawing.Size(100, 31)
+        Me.CodeTextBox.Size = New System.Drawing.Size(76, 26)
         Me.CodeTextBox.TabIndex = 4
-        '
-        'Prod1DemLabel
-        '
-        Prod1DemLabel.AutoSize = True
-        Prod1DemLabel.Location = New System.Drawing.Point(210, 235)
-        Prod1DemLabel.Name = "Prod1DemLabel"
-        Prod1DemLabel.Size = New System.Drawing.Size(119, 25)
-        Prod1DemLabel.TabIndex = 5
-        Prod1DemLabel.Text = "Prod1Dem:"
         '
         'Prod1DemTextBox
         '
         Me.Prod1DemTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.NodesBindingSource, "Prod1Dem", True))
-        Me.Prod1DemTextBox.Location = New System.Drawing.Point(335, 232)
+        Me.Prod1DemTextBox.Location = New System.Drawing.Point(251, 186)
+        Me.Prod1DemTextBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Prod1DemTextBox.Name = "Prod1DemTextBox"
-        Me.Prod1DemTextBox.Size = New System.Drawing.Size(100, 31)
+        Me.Prod1DemTextBox.Size = New System.Drawing.Size(76, 26)
         Me.Prod1DemTextBox.TabIndex = 6
-        '
-        'Prod2DemLabel
-        '
-        Prod2DemLabel.AutoSize = True
-        Prod2DemLabel.Location = New System.Drawing.Point(210, 272)
-        Prod2DemLabel.Name = "Prod2DemLabel"
-        Prod2DemLabel.Size = New System.Drawing.Size(119, 25)
-        Prod2DemLabel.TabIndex = 7
-        Prod2DemLabel.Text = "Prod2Dem:"
         '
         'Prod2DemTextBox
         '
         Me.Prod2DemTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.NodesBindingSource, "Prod2Dem", True))
-        Me.Prod2DemTextBox.Location = New System.Drawing.Point(335, 269)
+        Me.Prod2DemTextBox.Location = New System.Drawing.Point(251, 215)
+        Me.Prod2DemTextBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Prod2DemTextBox.Name = "Prod2DemTextBox"
-        Me.Prod2DemTextBox.Size = New System.Drawing.Size(100, 31)
+        Me.Prod2DemTextBox.Size = New System.Drawing.Size(76, 26)
         Me.Prod2DemTextBox.TabIndex = 8
-        '
-        'Prod3DemLabel
-        '
-        Prod3DemLabel.AutoSize = True
-        Prod3DemLabel.Location = New System.Drawing.Point(210, 309)
-        Prod3DemLabel.Name = "Prod3DemLabel"
-        Prod3DemLabel.Size = New System.Drawing.Size(119, 25)
-        Prod3DemLabel.TabIndex = 9
-        Prod3DemLabel.Text = "Prod3Dem:"
         '
         'Prod3DemTextBox
         '
         Me.Prod3DemTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.NodesBindingSource, "Prod3Dem", True))
-        Me.Prod3DemTextBox.Location = New System.Drawing.Point(335, 306)
+        Me.Prod3DemTextBox.Location = New System.Drawing.Point(251, 245)
+        Me.Prod3DemTextBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Prod3DemTextBox.Name = "Prod3DemTextBox"
-        Me.Prod3DemTextBox.Size = New System.Drawing.Size(100, 31)
+        Me.Prod3DemTextBox.Size = New System.Drawing.Size(76, 26)
         Me.Prod3DemTextBox.TabIndex = 10
         '
         'frmNodes
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(633, 503)
+        Me.ClientSize = New System.Drawing.Size(475, 402)
         Me.Controls.Add(CityLabel)
         Me.Controls.Add(Me.CityTextBox)
         Me.Controls.Add(CodeLabel)
@@ -290,6 +301,7 @@ Partial Class frmNodes
         Me.Controls.Add(Prod3DemLabel)
         Me.Controls.Add(Me.Prod3DemTextBox)
         Me.Controls.Add(Me.BindingNavigator1)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "frmNodes"
         Me.Text = "Nodes"
         CType(Me.BindingNavigator1, System.ComponentModel.ISupportInitialize).EndInit()

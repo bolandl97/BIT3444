@@ -15,4 +15,5 @@
     Private Sub BindingNavigatorMoveNextItem_Click(sender As Object, e As EventArgs) Handles BindingNavigatorMoveNextItem.Click
 
     End Sub
+
 End Class
