@@ -136,9 +136,10 @@
         If cbxSelected.Checked Then
             totalCost = opt.MinCostFlow(net, lstProducts.SelectedItem)
         Else
-            For Each p In net.ProdList
-                totalCost += opt.MinCostFlow(net, p.Key)
-            Next
+            'For Each p In net.ProdList
+            '    totalCost += opt.MinCostFlow(net, p.Key)
+            'Next
+            totalCost = opt.MinCostFlow2(net)
         End If
 
 
