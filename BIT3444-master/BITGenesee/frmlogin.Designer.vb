@@ -57,7 +57,7 @@ Partial Class frmLogin
         '
         'txtPassword
         '
-        Me.txtPassword.Location = New System.Drawing.Point(257, 334)
+        Me.txtPassword.Location = New System.Drawing.Point(258, 334)
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.Size = New System.Drawing.Size(223, 26)
         Me.txtPassword.TabIndex = 3
@@ -66,7 +66,7 @@ Partial Class frmLogin
         'LblUsername
         '
         Me.LblUsername.AutoSize = True
-        Me.LblUsername.Location = New System.Drawing.Point(63, 255)
+        Me.LblUsername.Location = New System.Drawing.Point(68, 257)
         Me.LblUsername.Name = "LblUsername"
         Me.LblUsername.Size = New System.Drawing.Size(83, 20)
         Me.LblUsername.TabIndex = 4

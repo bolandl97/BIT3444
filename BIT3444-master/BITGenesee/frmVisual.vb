@@ -90,6 +90,7 @@
         End If
 
     End Sub
+
     'handles selection in products list box
     Private Sub lstProducts_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstProducts.SelectedIndexChanged
         'sets text box to node demand for selected product
@@ -129,7 +130,7 @@
         End If
 
 
-        txtTotalCost.Text = totalCost
+        txtTotalCost.Text = "$" & Math.Round(totalCost, 2)
         txtDemand.Text = data.GetDemand(net.NodeList(lstNodes.SelectedItem), net.ProdList(lstProducts.SelectedItem))
     End Sub
 
@@ -138,15 +139,24 @@
         'sets solved property to false
         solved = False
         'gets problem data from database
+
         nodesList = data.GetNodes()
         arcsList = data.GetArcs(nodesList)
         prodsList = data.GetProducts()
+
+        Dim nodesQuery = From node In data.GetNodes()
+                         Select node
+        Dim arcsQuery = From arc In data.GetArcs(nodesList)
+                        Select arc
+        Dim prodsQuery = From prod In data.GetProducts()
+                         Select prod
+
         'populates nodes listBox
-        For Each node In nodesList
+        For Each node In nodesQuery
             lstNodes.Items.Add(node.Key)
         Next
         'populats products listbox
-        For Each product In prodsList
+        For Each product In prodsQuery
             lstProducts.Items.Add(product.Key)
         Next
         'selects first city
@@ -156,4 +166,15 @@
 
     End Sub
 
+    'shows frmNodes when btnNodes is clicked
+    Private Sub btnNodes_Click(sender As Object, e As EventArgs) Handles btnNodes.Click
+        Dim nodesForm As New frmNodes
+        nodesForm.Show()
+    End Sub
+
+    'shows frmProducts when btnProducts is clicked
+    Private Sub btnProduct_Click(sender As Object, e As EventArgs) Handles btnProduct.Click
+        Dim prodForm As New frmProducts
+        prodForm.Show()
+    End Sub
 End Class

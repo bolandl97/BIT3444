@@ -88,7 +88,7 @@ Partial Class frmProducts
         Me.ProductsBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.ProductsBindingNavigator.Name = "ProductsBindingNavigator"
         Me.ProductsBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.ProductsBindingNavigator.Size = New System.Drawing.Size(574, 39)
+        Me.ProductsBindingNavigator.Size = New System.Drawing.Size(344, 39)
         Me.ProductsBindingNavigator.TabIndex = 0
         Me.ProductsBindingNavigator.Text = "BindingNavigator1"
         '
@@ -104,7 +104,7 @@ Partial Class frmProducts
         'BindingNavigatorCountItem
         '
         Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(71, 36)
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(54, 36)
         Me.BindingNavigatorCountItem.Text = "of {0}"
         Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
         '
@@ -145,7 +145,7 @@ Partial Class frmProducts
         Me.BindingNavigatorPositionItem.AccessibleName = "Position"
         Me.BindingNavigatorPositionItem.AutoSize = False
         Me.BindingNavigatorPositionItem.Name = "BindingNavigatorPositionItem"
-        Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(50, 39)
+        Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(38, 31)
         Me.BindingNavigatorPositionItem.Text = "0"
         Me.BindingNavigatorPositionItem.ToolTipText = "Current position"
         '
@@ -194,9 +194,10 @@ Partial Class frmProducts
         Me.ProductsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ProductsDataGridView.GridColor = System.Drawing.SystemColors.ControlLight
         Me.ProductsDataGridView.Location = New System.Drawing.Point(0, 39)
+        Me.ProductsDataGridView.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.ProductsDataGridView.Name = "ProductsDataGridView"
         Me.ProductsDataGridView.RowTemplate.Height = 33
-        Me.ProductsDataGridView.Size = New System.Drawing.Size(574, 366)
+        Me.ProductsDataGridView.Size = New System.Drawing.Size(344, 226)
         Me.ProductsDataGridView.TabIndex = 1
         '
         'DataGridViewTextBoxColumn1
@@ -213,11 +214,12 @@ Partial Class frmProducts
         '
         'frmProducts
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(574, 405)
+        Me.ClientSize = New System.Drawing.Size(344, 265)
         Me.Controls.Add(Me.ProductsDataGridView)
         Me.Controls.Add(Me.ProductsBindingNavigator)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "frmProducts"
         Me.Text = "Products"
         CType(Me.DatabaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
